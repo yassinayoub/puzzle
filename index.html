@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Puzzlespil</title>
+    <style>
+      /* CSS styles for the layout and design */
+      .container {
+        width: 50%;
+        float: left;
+        text-align: center;
+      }
+      .button {
+        width: 80%;
+        margin: 10px auto;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .button:hover {
+        background-color: #3e8e41;
+      }
+      .image {
+        width: 80%;
+        margin: 10px auto;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div id="imageContainerLeft"></div>
+        <button class="button" onclick="displayImage(1, 'Left')">Button 1</button>
+        <button class="button" onclick="displayImage(2, 'Left')">Button 2</button>
+        <button class="button" onclick="displayImage(3, 'Left')">Button 3</button>
+        <button class="button" onclick="displayImage(4, 'Left')">Button 4</button>
+        <button class="button" onclick="displayImage(5, 'Left')">Button 5</button>
+        <button class="button" onclick="displayImage(6, 'Left')">Button 6</button>
+      <img class="image" id="image1" src="bil/image1.png">
+      <img class="image" id="image2" src="bil/image2.png">
+      <img class="image" id="image3" src="bil/image3.png">
+      <img class="image" id="image4" src="bil/image4.png">
+      <img class="image" id="image5" src="bil/image5.png">
+      <img class="image" id="image6" src="bil/image6.png">
+    </div>
+    <div class="container">
+        <div id="imageContainerRight"></div>
+        <button class="button" onclick="displayImage(1, 'Right')">Button 1</button>
+        <button class="button" onclick="displayImage(2, 'Right')">Button 2</button>
+        <button class="button" onclick="displayImage(3, 'Right')">Button 3</button>
+        <button class="button" onclick="displayImage(4, 'Right')">Button 4</button>
+        <button class="button" onclick="displayImage(5, 'Right')">Button 5</button>
+        <button class="button" onclick="displayImage(6, 'Right')">Button 6</button>
+      <img class="image" id="image1" src="bil/image1.png">
+      <img class="image" id="image2" src="bil/image2.png">
+      <img class="image" id="image3" src="bil/image3.png">
+      <img class="image" id="image4" src="bil/image4.png">
+      <img class="image" id="image5" src="bil/image5.png">
+      <img class="image" id="image6" src="bil/image6.png">
+    </div>
+    <script>
+      // JavaScript function to display the corresponding image when a button is clicked
+
+      function displayImage(num, side) {
+    var images = document.getElementsByClassName("image");
+    for (var i = 0; i < images.length; i++) {
+        if(!images[i].classList.contains(side))
+          images[i].style.display = "none";
+    }
+    var selectedImage = document.getElementById("image" + num);
+    selectedImage.style.display = "block";
+    var container = document.getElementById("imageContainer" + side);
+    container.appendChild(selectedImage);
+  }
+
+
+    </script>
+  </body>
+</html>
